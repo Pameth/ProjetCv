@@ -1,0 +1,3 @@
+index:
+    path: /ProjetCv
+    controller: App\Controller\AccueilController::index

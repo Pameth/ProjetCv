@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Cv{% endblock %}
+
+{% block body %}
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <button class="btn btn-sm btn-outline-primary">
+        <a class="nav-link scrollto active" href="{{ path('cv_index') }}">Retour </a>
+    </button>
+    <br><br>
+    &emsp;&emsp;&emsp;<div class="row">
+    <div class="container col-md-6">
+        <div class="card">
+
+            <div class = "card-body">
+                <div class="card-header">
+                <p class="section-title">CREATION Cv</p></div>
+
+                {{ include('cv/_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+    <div class="container col-md-4">
+        <div class="card">
+            <div class="card-header"></div>
+            <div class = "card-body">
+                <a href="{{ path('cv_index') }}">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        VOIR SON CV &emsp;<i class="fa fa-folder-open" aria-hidden="true"></i></i>
+                    </button>
+                </a>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+{% endblock %}

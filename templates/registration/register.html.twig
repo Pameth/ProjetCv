@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<br>
+<div class="section-title">
+    <h2>Demandeur d'Emploi</h2>
+    <p>Mettez a jour les infos sur vous et votre profil. Ces informations sont très importantes et vous pouvez les modifer à tout moment.</p>
+
+
+    <div class="row">
+        <div class="container col-md-6">
+            <form method="post">
+                <br><br><br><br>
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+            <div class="alert alert alert-primary" role="alert">
+                <h4 class="text-primary text-center">INSCRIPTION</h4>
+    <div class="form-group">
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.password, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn btn-lg btn-primary">Valider</button>
+            {{ form_end(registrationForm) }}
+            </div>
+            </div>
+            </form>
+        </div>
+        <div class="container col-md-6">
+            <div class="container">
+                <section id='main-content' class="ba">
+                    <h1 class='title' >Connectez-vous à votre compte !</h1>
+                    <div id="content-group-inner" class="content-group-inner inner"></div>
+                    <div id="block-emaprofiles-become-member" class="block with-title">
+                        <div class="inner clearfix">
+                            <h2 class="title">
+                                <a href="{{ path('app_login') }}">Se connecter</a>
+                            </h2>
+                            <div class="content"><h3>Nos avantages</h3>
+                                <br>
+                                <ul>
+                                    <li>Inscription rapide</li>
+                                    <li>Des recherches rapides et efficaces</li>
+                                    <li>Publication d´annonces 24h/24 7j/7</li>
+                                    <li>Plus de 1.000 recruteurs actifs</li>
+                                    <li>Stricte confidentialité de vos données</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+{% endblock %}

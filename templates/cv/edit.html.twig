@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}modifier Cv{% endblock %}
+{% block body %}
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <button class="btn btn-sm btn-outline-primary">
+    <a class="nav-link scrollto active" href="{{ path('cv_index') }}">Retour </a>
+    </button>
+<section class="align-content-center">
+    <div class="container">
+        <div class="container">
+            <div class="container">
+                <div class="container">
+                    <div class="container">
+                        <div class="container">
+                            <div class = "card-body">
+                                <div class="card-header ">
+                                    <p class="section-title">MOdifier son Cv</p>
+                                </div>
+                                {{ include('cv/_form.html.twig', {'button_label': 'Update'}) }}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-title">
+            <h2><a href="{{ path('cv_index') }}">Voir la liste</a></h2>
+            <h2> {{ include('cv/_delete_form.html.twig') }}</h2>
+        </div>
+    </div>
+</section>
+{% endblock %}

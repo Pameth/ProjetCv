@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<br>
+<div class="section-title">
+    <h2>Demandeur d'Emploi</h2>
+    <p>Mettez a jour les infos sur vous et votre profil. Ces informations sont très importantes et vous pouvez les modifer à tout moment.</p>
+
+
+    <div class="row">
+        <div class="container col-md-6">
+        <form method="post">
+            <br><br><br><br>
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            {% if app.user %}
+                <div class="mb-3">
+                    You are logged in as {{ app.user.username }}, <a href="{{ path('app_login') }}">Logout</a>
+                </div>
+            {% endif %}
+
+            <div class="alert alert alert-primary" role="alert">
+                <h4 class="text-primary text-center">CONNEXION</h4>
+                <label for="inputEmail">Email</label>
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+                <br> <label for="inputPassword">Mot de Passe</label>
+                <input type="password" name="password" id="inputPassword" class="form-control" required>
+                <br>
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}">
+
+                {#
+                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                    See https://symfony.com/doc/current/security/remember_me.html
+
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" name="_remember_me"> Remember me
+                        </label>
+                    </div>
+                #}
+
+                <button class="btn btn-lg btn-primary" type="submit">
+                    Se connecter
+                </button>
+            </div>
+
+        </form>
+        </div>
+        <div class="container col-md-6">
+            <div class="container">
+            <section id='main-content' class="ba">
+                <h1 class='title' >Connectez-vous à votre compte !</h1>
+                <div id="content-group-inner" class="content-group-inner inner"></div>
+                <div id="block-emaprofiles-become-member" class="block with-title">
+                    <div class="inner clearfix">
+                        <h2 class="title">
+                            <a href="{{ path('app_register') }}">S´inscrire</a>
+                        </h2>
+                        <div class="content"><h3>Nos avantages</h3>
+                            <br>
+                            <ul>
+                                <li>Inscription rapide</li>
+                                <li>Des recherches rapides et efficaces</li>
+                                <li>Publication d´annonces 24h/24 7j/7</li>
+                                <li>Plus de 1.000 recruteurs actifs</li>
+                                <li>Stricte confidentialité de vos données</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+{% endblock %}

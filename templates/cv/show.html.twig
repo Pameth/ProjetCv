@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cv{% endblock %}
+
+{% block body %}
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <button class="btn btn-sm btn-outline-primary">
+        <a class="nav-link scrollto active" href="{{ path('cv_index') }}">Retour </a>
+    </button>
+
+    <section class="align-content-center">
+        <div class="container">
+            <div class="container">
+                <div class="container">
+                    <div class="container">
+                        <div class="container">
+                            <div class="container">
+                                <div class = "card-body">
+                                    <div class="card-header ">
+                                        <p class="section-title">CV</p>
+                                    </div>
+
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>Nom :</th>
+                    <td class="col-4">{{ cv.nom }}</td>
+                </tr>
+                <tr>
+                    <th>Prenom :</th>
+                    <td>{{ cv.prenom }}</td>
+                </tr>
+                <tr>
+                    <th>Age :</th>
+                    <td>{{ cv.age }}</td>
+                </tr>
+                <tr>
+                    <th>Adresse :</th>
+                    <td>{{ cv.adresse }}</td>
+                </tr>
+                <tr>
+                    <th>Email :</th>
+                    <td>{{ cv.email }}</td>
+                </tr>
+                <tr>
+                    <th>Tel :</th>
+                    <td>{{ cv.tel }}</td>
+                </tr>
+                <tr>
+                    <th>Specialite :</th>
+                    <td>{{ cv.specialite }}</td>
+                </tr>
+                <tr>
+                    <th>Niveau d'Etude :</th>
+                    <td>{{ cv.niveau }}</td>
+                </tr>
+                <tr>
+                    <th>Experience Professionnelle :</th>
+                    <td>{{ cv.experiencePro }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+                        </div></div></div></div></div>
+            <div class="section-title">
+                <h2>{{ include('cv/_delete_form.html.twig') }}</h2>
+
+                <h2><a href="{{ path('cv_edit', {'id': cv.id}) }}">Modifer Votre CV</a></h2>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
